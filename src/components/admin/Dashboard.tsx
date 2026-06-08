@@ -1,30 +1,30 @@
 import {
   PieChart, Pie, Cell, BarChart, Bar,
-  XAxis, YAxis, Tooltip, ResponsiveContainer, Legend,
+  XAxis, YAxis, Tooltip, ResponsiveContainer,
   AreaChart, Area, CartesianGrid,
 } from 'recharts';
 import type { Chamado } from '@/types';
 
 const CAT_COLORS: Record<string, string> = {
-  Buraco:     '#ef4444',
+  Buraco: '#ef4444',
   Iluminação: '#f59e0b',
-  Vazamento:  '#3b82f6',
-  Lixo:       '#10b981',
-  Árvore:     '#059669',
-  Outro:      '#8b5cf6',
+  Vazamento: '#3b82f6',
+  Lixo: '#10b981',
+  Árvore: '#059669',
+  Outro: '#8b5cf6',
 };
 
 const STATUS_COLORS: Record<string, string> = {
-  'Aberto':       '#3b82f6',
+  'Aberto': '#3b82f6',
   'Em andamento': '#f59e0b',
-  'Resolvido':    '#10b981',
+  'Resolvido': '#10b981',
 };
 
 interface Props { chamados: Chamado[] }
 
 export function Dashboard({ chamados }: Props) {
-  const total     = chamados.length;
-  const aberto    = chamados.filter(c => c.status === 'Aberto').length;
+  const total = chamados.length;
+  const aberto = chamados.filter(c => c.status === 'Aberto').length;
   const andamento = chamados.filter(c => c.status === 'Em andamento').length;
   const resolvido = chamados.filter(c => c.status === 'Resolvido').length;
 
@@ -35,9 +35,9 @@ export function Dashboard({ chamados }: Props) {
   const categoriaData = Object.entries(byCategoria).map(([name, value]) => ({ name, value }));
 
   const statusData = [
-    { name: 'Aberto',       value: aberto    },
+    { name: 'Aberto', value: aberto },
     { name: 'Em andamento', value: andamento },
-    { name: 'Resolvido',    value: resolvido },
+    { name: 'Resolvido', value: resolvido },
   ];
 
   const tendenciaData = Array.from({ length: 14 }, (_, i) => {
@@ -47,7 +47,7 @@ export function Dashboard({ chamados }: Props) {
     const count = chamados.filter(c => {
       const cd = new Date(c.created_at);
       return (
-        cd.getDate()  === d.getDate() &&
+        cd.getDate() === d.getDate() &&
         cd.getMonth() === d.getMonth() &&
         cd.getFullYear() === d.getFullYear()
       );
@@ -56,10 +56,10 @@ export function Dashboard({ chamados }: Props) {
   });
 
   const STAT_CARDS = [
-    { label: 'Total',        value: total,     color: 'text-slate-800',   bg: 'bg-slate-100'  },
-    { label: 'Abertos',      value: aberto,    color: 'text-blue-700',    bg: 'bg-blue-50'    },
-    { label: 'Em andamento', value: andamento, color: 'text-yellow-700',  bg: 'bg-yellow-50'  },
-    { label: 'Resolvidos',   value: resolvido, color: 'text-emerald-700', bg: 'bg-emerald-50' },
+    { label: 'Total', value: total, color: 'text-slate-800', bg: 'bg-slate-100' },
+    { label: 'Abertos', value: aberto, color: 'text-blue-700', bg: 'bg-blue-50' },
+    { label: 'Em andamento', value: andamento, color: 'text-yellow-700', bg: 'bg-yellow-50' },
+    { label: 'Resolvidos', value: resolvido, color: 'text-emerald-700', bg: 'bg-emerald-50' },
   ];
 
   return (
@@ -124,7 +124,7 @@ export function Dashboard({ chamados }: Props) {
           <AreaChart data={tendenciaData}>
             <defs>
               <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%"  stopColor="#2563eb" stopOpacity={0.15} />
+                <stop offset="5%" stopColor="#2563eb" stopOpacity={0.15} />
                 <stop offset="95%" stopColor="#2563eb" stopOpacity={0} />
               </linearGradient>
             </defs>

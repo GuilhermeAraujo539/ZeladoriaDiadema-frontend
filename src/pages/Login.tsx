@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Loader2, Eye, EyeOff, ShieldCheck } from 'lucide-react';
+import { Loader2, Eye, EyeOff } from 'lucide-react';
 import { adminLogin, setStoredToken } from '@/lib/supabase';
 import { Logo } from '@/components/ui/Logo';
 import { Footer } from '@/components/layout/Footer';

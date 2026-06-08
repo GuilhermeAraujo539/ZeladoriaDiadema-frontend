@@ -17,15 +17,14 @@ export interface Chamado {
 }
 
 export interface HistoricoAlteracao {
-  id:              string;
-  chamado_id:      string;
+  id: string;
+  chamado_id?: string;
   status_anterior: string | null;
-  status_novo:     string;
-  alterado_por:    string;
-  created_at:      string;
+  status_novo: string;
+  alterado_por: string;
+  created_at: string;
 }
 
-// ── Chatbot ──────────────────────────────────────────────────
 export type ChatStep = 'welcome' | 'nome' | 'contato' | 'descricao' | 'imagem' | 'processando' | 'concluido';
 
 export interface ChatMessage {
