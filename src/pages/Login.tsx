@@ -46,7 +46,7 @@ export default function Login() {
               <img
                 src="/IconeDiadema.png"
                 alt="Prefeitura de Diadema"
-                className="w-10 h-10 object-contain"
+                className="h-10 w-auto object-contain flex-shrink-0"
               />
             </div>
 
