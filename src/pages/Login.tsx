@@ -44,7 +44,7 @@ export default function Login() {
               className="inline-flex items-center justify-center w-16 h-16 mb-4"
             >
               <img
-                src="/public/iconeDiadema.png"
+                src="/iconeDiadema.png"
                 alt="Prefeitura de Diadema"
                 className="w-10 h-10 object-contain"
               />
