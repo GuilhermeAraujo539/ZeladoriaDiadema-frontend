@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="frontend/public/logo.png" alt="Prefeitura de Diadema" width="300" />
+<img src="/public/logo.png" alt="Prefeitura de Diadema" width="300" />
 
 # Plataforma de Zeladoria Urbana
 
