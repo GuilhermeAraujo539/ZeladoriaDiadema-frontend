@@ -121,10 +121,12 @@ VITE_SUPABASE_ANON_KEY=
 
 ```bash
 # Backend
-cd backend && npm install && npm run dev
+cd pastaBackend && npm install && npm run dev
 
-# Frontend (outro terminal)
-cd frontend && npm install && npm run dev
+# Frontend (outro terminal
+cd pastaFrontend && npm install && npm run dev
+
+Devem estar rodando juntos.
 ```
 
 Acesse `http://localhost:5173`
